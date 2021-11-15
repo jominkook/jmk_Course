@@ -1,0 +1,56 @@
+package com.jmk.controller;
+import java.util.Locale;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+@Controller 
+
+public class HomeController { 
+
+ 
+	 
+private static final Logger logger = LoggerFactory.getLogger(HomeController.class); 
+
+	 
+
+	/** 
+
+	 * Simply selects the home view to render by returning its name. 
+
+	 */ 
+
+	@RequestMapping(value = "/", method = RequestMethod.GET) 
+
+	public String home(Locale locale, Model model) { 
+
+	 
+
+	 return "home"; 
+
+	} 
+
+	@RequestMapping(value = "/semsteroffers",method = RequestMethod.GET) //학기별 이수학점 맵핑 
+
+	public String readoffers(Locale locale, Model model) { 
+
+	 
+
+		return "semsteroffers";  
+
+	} 
+
+	@RequestMapping(value = "/createoffers",method = RequestMethod.GET) //수강신청하기 
+
+	public String createoffers(Locale locale,Model model) { 
+
+	 
+
+		return "createoffers"; 
+
+
+	} 
+}
